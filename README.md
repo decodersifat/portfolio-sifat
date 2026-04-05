@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio (Next.js 16)
 
-## Getting Started
+This is a Next.js portfolio project configured for Vercel deployment.
 
-First, run the development server:
+## Local Development
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Check (Before Deploy)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run a production build locally:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The repository is prepared for Vercel with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `vercel.json` (framework/build/install commands)
+- `package.json` `engines.node` set to `>=20.9.0`
+- `.env.example` for environment variable setup
 
-## Deploy on Vercel
+Deployment steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub/GitLab/Bitbucket.
+2. In Vercel, click **Add New Project** and import the repository.
+3. Keep the detected framework as **Next.js**.
+4. Add environment variables from `.env.example` in **Project Settings -> Environment Variables** (if you use them).
+5. Click **Deploy**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After deploy, each push to the connected branch will trigger automatic redeploys.
+
+## Notes
+
+- Remote image loading is already allowed for `https://dev.ittahad.site` in `next.config.ts`.
+- Next.js 16 minimum Node version is 20.9.
