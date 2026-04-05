@@ -1,0 +1,2 @@
+﻿components/SmoothScroll.tsx(8,7): error TS2322: Type 'React.ReactNode' is not assignable to type 'import("E:/InQbic/protfolio/claude/node_modules/@studio-freight/react-lenis/node_modules/@types/react/index").ReactNode'.
+  Type 'bigint' is not assignable to type 'ReactNode'.
