@@ -1,7 +1,7 @@
 export const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
+  { label: "Experience", href: "#professional-experience" },
+  { label: "Achievements", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Articles", href: "#articles" },
   { label: "Open Source", href: "#opensource" },
@@ -9,7 +9,6 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "3.94", label: "Last Sem CGPA" },
   { value: "3+", label: "Projects Built" },
   { value: "2", label: "Awards Won" },
   { value: "AI/ML", label: "Specialisation" },
@@ -28,18 +27,38 @@ export const publications = [
   },
 ];
 
-export const experiences = [
+export const professionalExperiences = [
   {
-    title: "B.Sc. in Computer Science and Engineering",
-    company: "Northern University Bangladesh",
-    period: "Jan 2023 – Present",
+    title: "Full Stack Developer",
+    company: "ShafaCode",
+    period: "Mar 2026 – Present | Remote",
     type: "current",
     bullets: [
-      "CGPA of last semester: 3.94 / 4.00 · Cumulative CGPA: 3.44 / 4.00",
-      "Strong foundation in algorithms, data structures, software engineering, and AI/ML.",
-      "Actively involved in university tech clubs and competitive programming events.",
+      "Developed scalable REST APIs using NestJS and TypeScript",
+      "Designed and managed relational databases using PostgreSQL with TypeORM",
+      "Implemented secure authentication and authorization systems",
+      "Integrated AWS S3 for file storage and media handling",
+      "Deployed and managed backend services using Railway",
+      "Collaborated with frontend using Next.js and deployed applications on Vercel",
+      "Optimized API performance and improved system scalability"
     ],
   },
+  {
+    title: "Backend Developer (Intern)",
+    company: "ShafaCode",
+    period: "Nov 2025 – Feb 2026 | Remote",
+    type: "past",
+    bullets: [
+      "Built and maintained REST APIs for real-world applications",
+      "Worked with NestJS, PostgreSQL, and TypeORM",
+      "Assisted in backend architecture and database design",
+      "Gained hands-on experience with production-level development",
+      "Successfully completed internship and received official certification."
+    ],
+  }
+];
+
+export const experiences = [
   {
     title: "Champion – 1st Data Innovators Challenge",
     company: "AI Expert Career · 2024",

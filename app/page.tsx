@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TickerStrip from "@/components/TickerStrip";
 import AboutSection from "@/components/AboutSection";
+import ProfessionalExperienceSection from "@/components/ProfessionalExperienceSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ArticlesSection from "@/components/ArticlesSection";
@@ -21,8 +22,9 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TickerStrip />
-      <AboutSection />
+      <ProfessionalExperienceSection />
       <ExperienceSection />
+      <AboutSection />
       <ProjectsSection />
       <ArticlesSection />
       <OpenSourceSection />

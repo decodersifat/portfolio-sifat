@@ -112,7 +112,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-7">
+          <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               const isActive = activeSection === id;
@@ -132,7 +132,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Mobile hamburger */}
             <button
-              className="md:hidden text-muted hover:text-foreground p-2"
+              className="lg:hidden text-muted hover:text-foreground p-2"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >
@@ -146,7 +146,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl md:hidden flex flex-col items-center justify-center"
+          className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center"
         >
           <ul className="flex flex-col items-center gap-6">
             {navLinks.map((link) => {

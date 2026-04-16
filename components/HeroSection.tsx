@@ -166,7 +166,7 @@ export default function HeroSection() {
       id="home" 
       ref={container}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[85dvh] lg:min-h-[100dvh] flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pb-10 md:pb-0"
+      className="relative min-h-[85dvh] lg:min-h-[100dvh] flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pb-10 md:pb-0 md:pt-16 lg:pt-20"
     >
       {/* Background Orbs */}
       <div className="hero-bg-orbs absolute inset-0 pointer-events-none">

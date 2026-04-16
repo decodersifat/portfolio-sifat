@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { experiences } from "@/lib/data";
+import { professionalExperiences } from "@/lib/data";
 import { SectionHeader } from "./AboutSection";
 import TiltCard from "./TiltCard";
 
@@ -31,7 +31,7 @@ function AnimatedLine() {
   );
 }
 
-export default function ExperienceSection() {
+export default function ProfessionalExperienceSection() {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -92,15 +92,15 @@ export default function ExperienceSection() {
   }, { scope: container });
 
   return (
-    <section id="experience" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
+    <section id="professional-experience" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
-        <SectionHeader num="03" label="My Journey" title="Selected Awards & Achievements" />
+        <SectionHeader num="02" label="My Journey" title="Professional Experience" />
 
         <div className="relative">
           <AnimatedLine />
 
           <div className="space-y-6">
-            {experiences.map((exp, i) => (
+            {professionalExperiences.map((exp, i) => (
               <div key={i} className="exp-row relative pl-10 md:pl-12">
                 <TimelineDot />
 

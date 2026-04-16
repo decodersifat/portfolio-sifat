@@ -14,19 +14,19 @@ if (typeof window !== "undefined") {
 }
 
 const STATS = [
-  { end: "3.94", label: "Last Sem CGPA", icon: <Briefcase className="text-accent w-6 h-6" /> },
   { end: "3+", label: "Projects", icon: <FolderOpen className="text-accent w-6 h-6" /> },
   { end: "2", label: "Awards", icon: <Award className="text-accent w-6 h-6" /> },
   { end: "AI/ML", label: "Speciality", icon: <FileText className="text-accent w-6 h-6" /> },
 ];
 
 const SKILLS = [
-  "Python · TensorFlow · Keras",
-  "scikit-learn · OpenCV · Pandas",
-  "Django · Express.js · Node.js",
-  "React · Tailwind CSS · PostgreSQL",
-  "MongoDB · MySQL · Git · GitHub",
-  "Java · C · C++ · JavaScript",
+  { category: "Programming Languages", tools: "Python, Java, C, C++, JavaScript, SQL, HTML, CSS, NoSQL" },
+  { category: "Databases & ORM", tools: "MongoDB, Mongoose, PostgreSQL, MySql" },
+  { category: "Machine Learning & AI", tools: "TensorFlow, Keras, Scikit-learn, OpenCV" },
+  { category: "Frameworks & Libraries", tools: "Django, Express.js, React, Tailwind CSS, Jetpack Compose, Pandas, Numpy, Matplotlib, Seaborn" },
+  { category: "Backend & APIs", tools: "Node.js, RESTful APIs, JSON" },
+  { category: "Developer Tools", tools: "Android Studio, PyCharm, Jupyter Notebook, VS Code, Postman, npm, pip" },
+  { category: "Version Control", tools: "Git, GitHub" }
 ];
 
 export function SectionHeader({ num, label, title }: { num: string; label: string; title: string }) {
@@ -140,27 +140,27 @@ export default function AboutSection() {
             </div>
           ))}
 
-          {/* Certifications (Scrollable Area) */}
-          <div className="bento-card md:col-span-2 md:row-span-1">
+          {/* Skills Area - Made bigger and eyecatching */}
+          <div className="bento-card md:col-span-4 md:row-span-2">
             <TiltCard className="h-full w-full p-6 md:p-8 rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
               <h3 className="text-muted text-xs tracking-widest uppercase mb-4 md:mb-6 flex justify-between items-center" style={{ fontFamily: "var(--font-mono)" }}>
-                // Skills
+                // TECHNICAL SKILL
                 <Award size={14} className="text-accent" />
               </h3>
-              <div className="grid grid-cols-2 gap-y-3 md:gap-y-4 gap-x-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-y-6 gap-x-6">
                 {SKILLS.map((skill, i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/70 text-[13px] md:text-sm leading-tight">{skill}</span>
+                  <div key={i} className="flex flex-col items-start gap-1 p-4 rounded-xl border border-accent/10 bg-accent/5 hover:bg-accent/10 transition-colors">
+                    <span className="text-accent text-[11px] uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{skill.category}</span>
+                    <span className="text-foreground/80 text-sm leading-tight mt-1">{skill.tools}</span>
                   </div>
                 ))}
               </div>
             </TiltCard>
           </div>
 
-          {/* Stats Boxes 3 & 4 */}
-          {STATS.slice(2, 4).map((stat, i) => (
-            <div key={i+2} className="bento-card md:col-span-1">
+          {/* Stat Box 3 */}
+          {STATS.slice(2, 3).map((stat, i) => (
+            <div key={i+2} className="bento-card md:col-span-4">
               <TiltCard className="h-full w-full p-5 md:p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center relative overflow-hidden text-center group">
                 <div className="bento-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-background flex items-center justify-center mb-3 md:mb-4 border border-border group-hover:border-accent/50 transition-colors">
                   {stat.icon}
