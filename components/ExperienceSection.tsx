@@ -92,7 +92,7 @@ export default function ExperienceSection() {
   }, { scope: container });
 
   return (
-    <section id="experience" className="bg-background py-24 px-6" ref={container}>
+    <section id="experience" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="02" label="My Journey" title="Experience" />
 
@@ -101,27 +101,27 @@ export default function ExperienceSection() {
 
           <div className="space-y-6">
             {experiences.map((exp, i) => (
-              <div key={i} className="exp-row relative pl-12">
+              <div key={i} className="exp-row relative pl-10 md:pl-12">
                 <TimelineDot />
 
                 <TiltCard
-                  className="p-6 rounded-xl border border-border bg-card"
+                  className="p-5 md:p-6 rounded-xl border border-border bg-card"
                   intensity={6}
                   glowColor="rgba(229,62,0,0.15)"
                 >
-                  <div className="mb-4">
+                  <div className="mb-3 md:mb-4">
                     <span
-                      className="exp-badge inline-block px-3 py-1 rounded border border-accent/50 bg-accent/10 text-accent text-[10px] tracking-[0.15em] uppercase"
+                      className="exp-badge inline-block px-3 py-1 rounded border border-accent/50 bg-accent/10 text-accent text-[11px] tracking-[0.12em] uppercase"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
                       {exp.period}
                     </span>
                   </div>
 
-                  <h3 className="text-foreground font-bold text-base mb-1" style={{ fontFamily: "var(--font-sans)" }}>
+                  <h3 className="text-foreground font-bold text-[15px] md:text-base mb-1" style={{ fontFamily: "var(--font-sans)" }}>
                     {exp.title}
                   </h3>
-                  <p className="text-accent text-[11px] tracking-[0.12em] uppercase mb-5" style={{ fontFamily: "var(--font-mono)" }}>
+                  <p className="text-accent text-[11px] md:text-xs tracking-[0.1em] uppercase mb-4 md:mb-5" style={{ fontFamily: "var(--font-mono)" }}>
                     {exp.company}
                   </p>
 
@@ -129,7 +129,7 @@ export default function ExperienceSection() {
                     {exp.bullets.map((b, j) => (
                       <li
                         key={j}
-                        className="exp-bullet flex items-start gap-2.5 text-foreground/80 text-sm leading-relaxed"
+                        className="exp-bullet flex items-start gap-2.5 text-foreground/80 text-[13px] md:text-sm leading-relaxed"
                         style={{ fontFamily: "var(--font-sans)" }}
                       >
                         <span className="exp-bullet-icon w-1.5 h-1.5 rounded-full bg-accent/60 mt-2 flex-shrink-0 transition-colors" />

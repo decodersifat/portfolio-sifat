@@ -42,19 +42,19 @@ export default function Footer() {
       {/* Back to top — fixed bottom-right accent button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-lg bg-accent hover:bg-accent-hover flex items-center justify-center text-white transition-colors shadow-lg"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-10 h-10 md:w-11 md:h-11 rounded-lg bg-accent hover:bg-accent-hover flex items-center justify-center text-white transition-colors shadow-lg"
         aria-label="Back to top"
       >
-        <ArrowUp size={18} />
+        <ArrowUp size={16} />
       </button>
 
-      <footer className="border-t border-border bg-background py-8 px-6">
+      <footer className="border-t border-border bg-background py-6 md:py-8 px-5 md:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Top row */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-6">
             {/* Brand */}
-            <div className="flex items-center gap-3">
-              <span className="w-5 h-5 bg-accent rounded-sm flex-shrink-0" />
+            <div className="flex items-center gap-2.5 md:gap-3">
+              <span className="w-4 h-4 md:w-5 md:h-5 bg-accent rounded-sm flex-shrink-0" />
               <span
                 className="text-foreground font-bold text-sm tracking-[0.12em] uppercase"
                 style={{ fontFamily: "var(--font-sans)" }}
@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="border-t border-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
             {/* Copyright */}
             <p
-              className="text-muted text-[10px] tracking-[0.15em] uppercase"
+              className="text-muted text-[11px] tracking-[0.12em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               © {year} MD Sifat Hossain. All rights reserved.
@@ -92,7 +92,7 @@ export default function Footer() {
 
             {/* Location tag */}
             <p
-              className="text-muted text-[10px] tracking-[0.12em] uppercase"
+              className="text-muted text-[11px] tracking-[0.1em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               Dhaka, Bangladesh 🇧🇩

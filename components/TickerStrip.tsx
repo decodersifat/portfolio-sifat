@@ -27,7 +27,7 @@ export default function TickerStrip() {
             className="flex items-center gap-4 px-4"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            <span className="text-[11px] tracking-[0.18em] text-muted uppercase">
+            <span className="text-[12px] md:text-[13px] tracking-[0.15em] text-muted uppercase">
               {item}
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />

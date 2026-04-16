@@ -55,22 +55,22 @@ export default function OpenSourceSection() {
   }, { scope: container });
 
   return (
-    <section id="opensource" className="bg-background py-24 px-6" ref={container}>
+    <section id="opensource" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="05" label="Community" title="Open Source" />
 
         <p
-          className="os-p text-muted text-sm mb-12 max-w-lg"
+          className="os-p text-muted text-[13px] md:text-sm mb-8 md:mb-12 max-w-lg"
           style={{ fontFamily: "var(--font-sans)" }}
         >
           Multi-tenant services, ML models, and full-stack tooling — built to learn, built to ship.
         </p>
 
         {/* 4-col grid */}
-        <div className="os-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="os-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
           {openSourceProjects.map((repo, i) => (
             <div key={repo.name} className="os-card">
-              <TiltCard className="p-5 rounded-xl border border-border bg-card flex flex-col h-full" intensity={10}>
+              <TiltCard className="p-4 md:p-5 rounded-xl border border-border bg-card flex flex-col h-full" intensity={10}>
                 <a
                   href={repo.link}
                   target="_blank"
@@ -78,16 +78,16 @@ export default function OpenSourceSection() {
                   className="flex flex-col h-full"
                   data-cursor-hover
                 >
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-3 md:mb-4">
                     <GithubIcon />
                     <span
-                      className="text-foreground font-semibold text-xs hover:text-accent transition-colors"
+                      className="text-foreground font-semibold text-[13px] md:text-xs hover:text-accent transition-colors"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
                       {repo.name}
                     </span>
                   </div>
-                  <p className="text-muted text-xs leading-relaxed flex-1 mb-4" style={{ fontFamily: "var(--font-sans)" }}>
+                  <p className="text-muted text-[13px] md:text-xs leading-relaxed flex-1 mb-3 md:mb-4" style={{ fontFamily: "var(--font-sans)" }}>
                     {repo.description}
                   </p>
                   <div className="flex items-center gap-1.5">
@@ -95,7 +95,7 @@ export default function OpenSourceSection() {
                       className="lang-dot w-2.5 h-2.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: langDotColors[repo.lang] ?? "#888", display: "inline-block" }}
                     />
-                    <span className="text-[10px] text-muted uppercase tracking-[0.1em]" style={{ fontFamily: "var(--font-mono)" }}>
+                    <span className="text-[11px] text-muted uppercase tracking-[0.1em]" style={{ fontFamily: "var(--font-mono)" }}>
                       {repo.lang}
                     </span>
                   </div>
@@ -111,7 +111,7 @@ export default function OpenSourceSection() {
             href="https://github.com/decodersifat?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-muted hover:text-foreground text-xs tracking-[0.1em] uppercase transition-colors border border-border hover:border-border px-4 py-2.5 rounded-lg"
+            className="inline-flex items-center gap-2 text-muted hover:text-foreground text-[11px] md:text-xs tracking-[0.1em] uppercase transition-colors border border-border hover:border-accent/30 px-4 py-2.5 rounded-lg"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             View All Repositories

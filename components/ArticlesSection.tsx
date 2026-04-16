@@ -50,12 +50,12 @@ export default function ArticlesSection() {
   }, { scope: container });
 
   return (
-    <section id="articles" className="bg-background py-24 px-6" ref={container}>
+    <section id="articles" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="04" label="Knowledge Sharing" title="Articles" />
 
         <p
-          className="articles-p text-muted text-sm mb-12 ml-0"
+          className="articles-p text-muted text-[13px] md:text-sm mb-8 md:mb-12 ml-0"
           style={{ fontFamily: "var(--font-sans)" }}
         >
           Visit my{" "}
@@ -71,17 +71,17 @@ export default function ArticlesSection() {
         </p>
 
         {/* 3-col grid */}
-        <div className="articles-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="articles-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {articles.map((article, i) => (
             <div key={i} className="article-card">
-              <TiltCard className="p-6 rounded-xl border border-border bg-card flex flex-col h-full" intensity={9}>
-                <div className="article-icon-wrap w-9 h-9 rounded-lg bg-accent/15 flex items-center justify-center mb-5 flex-shrink-0 transition-colors">
+              <TiltCard className="p-5 md:p-6 rounded-xl border border-border bg-card flex flex-col h-full" intensity={9}>
+                <div className="article-icon-wrap w-9 h-9 rounded-lg bg-accent/15 flex items-center justify-center mb-4 md:mb-5 flex-shrink-0 transition-colors">
                   {articleIcons[i] ?? articleIcons[0]}
                 </div>
-                <h3 className="text-foreground font-bold text-sm leading-snug mb-3" style={{ fontFamily: "var(--font-sans)" }}>
+                <h3 className="text-foreground font-bold text-[14px] md:text-sm leading-snug mb-2 md:mb-3" style={{ fontFamily: "var(--font-sans)" }}>
                   {article.title}
                 </h3>
-                <p className="text-muted text-xs leading-relaxed flex-1 mb-5" style={{ fontFamily: "var(--font-sans)" }}>
+                <p className="text-muted text-[13px] md:text-xs leading-relaxed flex-1 mb-4 md:mb-5" style={{ fontFamily: "var(--font-sans)" }}>
                   {article.summary}
                 </p>
                 <a

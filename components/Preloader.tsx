@@ -47,8 +47,8 @@ export default function Preloader() {
     >
       <div className="overflow-hidden">
         <h1
-          className="preloader-text text-accent text-7xl md:text-9xl uppercase mx-auto"
-          style={{ fontFamily: "var(--font-heading)", letterSpacing: "0.02em", transform: "translateY(0%)" }}
+          className="preloader-text text-accent text-6xl md:text-7xl lg:text-9xl uppercase mx-auto"
+          style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.04em", transform: "translateY(0%)", fontWeight: 800 }}
         >
           SIFAT
         </h1>

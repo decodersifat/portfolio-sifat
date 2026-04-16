@@ -10,9 +10,20 @@ export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!cursorRef.current || !trailRef.current) return;
+    // Detect touch/mobile devices and disable custom cursor
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 767px)").matches || "ontouchstart" in window);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile || !cursorRef.current || !trailRef.current) return;
 
     gsap.set([cursorRef.current, trailRef.current], { xPercent: -50, yPercent: -50 });
 
@@ -56,7 +67,10 @@ export default function CustomCursor() {
       window.removeEventListener("mousedown", down);
       window.removeEventListener("mouseup", up);
     };
-  }, []);
+  }, [isMobile]);
+
+  // Don't render custom cursor on mobile
+  if (isMobile) return null;
 
   return (
     <>
@@ -88,5 +102,3 @@ export default function CustomCursor() {
     </>
   );
 }
-
-

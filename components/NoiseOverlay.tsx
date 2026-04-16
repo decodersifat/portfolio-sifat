@@ -8,7 +8,7 @@ export default function NoiseOverlay() {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.to(ref.current, { opacity: 0.2, duration: 2, ease: "power2.out" });
+    gsap.to(ref.current, { opacity: 0.12, duration: 2, ease: "power2.out" });
   }, []);
 
   return (

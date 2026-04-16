@@ -166,7 +166,7 @@ export default function HeroSection() {
       id="home" 
       ref={container}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col justify-center bg-background overflow-hidden px-6 pt-20"
+      className="relative min-h-screen flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pt-24 md:pt-20"
     >
       {/* Background Orbs */}
       <div className="hero-bg-orbs absolute inset-0 pointer-events-none">
@@ -195,9 +195,9 @@ export default function HeroSection() {
       <div className="hero-content-wrap relative z-20 max-w-7xl mx-auto w-full flex flex-col items-start">
         
         {/* Monospaced Intro tag */}
-        <div className="hero-tag mb-8 inline-flex items-center gap-3 border border-border rounded-full px-5 py-2 backdrop-blur-sm bg-foreground/5">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-accent text-xs uppercase tracking-[0.2em]" style={{ fontFamily: "var(--font-mono)" }}>
+        <div className="hero-tag mb-6 md:mb-8 inline-flex items-center gap-2 md:gap-3 border border-border rounded-full px-4 md:px-5 py-2 backdrop-blur-sm bg-foreground/5">
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
+          <span className="text-accent text-[11px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em]" style={{ fontFamily: "var(--font-mono)" }}>
             Full-Stack &amp; AI/ML Engineer · Dhaka, Bangladesh
           </span>
         </div>
@@ -209,8 +209,8 @@ export default function HeroSection() {
           onMouseLeave={() => setHoveringName(false)}
         >
           <h1
-            className="hero-title text-foreground uppercase leading-[0.8] tracking-tighter"
-            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(4rem, 15vw, 15rem)" }}
+            className="hero-title text-foreground uppercase leading-[0.85] tracking-tighter font-extrabold"
+            style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3.5rem, 12vw, 14rem)", letterSpacing: "-0.04em" }}
           >
             Sifat
             <br />
@@ -225,18 +225,18 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Bar: Bio & CTAs */}
-        <div className="w-full mt-16 lg:mt-24 flex flex-col lg:flex-row items-end justify-between gap-10">
-          <p className="hero-desc max-w-md text-foreground/80 text-base lg:text-lg leading-relaxed dark:mix-blend-difference">
+        <div className="w-full mt-10 md:mt-16 lg:mt-24 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 md:gap-10">
+          <p className="hero-desc max-w-md text-foreground/80 text-[15px] md:text-base lg:text-lg leading-relaxed">
             Enthusiastic about building a career in tech &amp; CS research — with real hands-on experience in full-stack development, AI/ML projects, and competitive problem-solving.
           </p>
 
-          <div className="hero-buttons flex items-center gap-4 dark:mix-blend-difference">
+          <div className="hero-buttons flex items-center gap-3 md:gap-4">
             <button
               ref={magnet1.ref}
               onMouseMove={magnet1.onMove}
               onMouseLeave={magnet1.onLeave}
               onClick={() => scrollTo("projects")}
-              className="px-8 py-4 bg-foreground text-background font-semibold text-sm uppercase tracking-widest rounded-full hover:bg-foreground/80 transition-colors flex items-center gap-2"
+              className="px-5 md:px-8 py-3 md:py-4 bg-foreground text-background font-semibold text-xs md:text-sm uppercase tracking-widest rounded-full hover:bg-foreground/80 transition-all flex items-center gap-2"
               data-cursor-hover
             >
               Selected Works <ArrowRight size={16} />
@@ -246,11 +246,11 @@ export default function HeroSection() {
               onMouseMove={magnet2.onMove}
               onMouseLeave={magnet2.onLeave}
               onClick={() => scrollTo("contact")}
-              className="w-14 h-14 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-all"
               aria-label="Contact"
               data-cursor-hover
             >
-              <Mail size={20} />
+              <Mail size={18} />
             </button>
           </div>
         </div>

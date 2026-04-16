@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useTheme } from "next-themes";
 import { navLinks } from "@/lib/data";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { useLenis } from "lenis/react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,6 +14,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const lenis = useLenis();
   
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -62,11 +64,18 @@ export default function Navbar() {
   });
 
   const handleNavClick = (href: string, label: string) => {
-    window.dispatchEvent(
-      new CustomEvent("page-transition", {
-        detail: { targetId: href, title: label },
-      })
-    );
+    if (lenis) {
+      if (href === "#home") {
+        lenis.scrollTo(0, { duration: 1.5 });
+      } else {
+        lenis.scrollTo(href, { duration: 1.5, offset: -50 });
+      }
+    } else {
+      const id = href.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+    
     const id = href.replace("#", "");
     setActiveSection(id);
     closeMobileMenu();
@@ -77,23 +86,23 @@ export default function Navbar() {
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 flex justify-center ${
           scrolled 
-            ? "top-6 px-4" 
+            ? "top-4 md:top-6 px-3 md:px-4" 
             : "top-0 px-0"
         }`}
       >
         <div 
           className={`w-full transition-all duration-500 flex items-center justify-between ${
             scrolled 
-              ? "max-w-5xl h-16 px-8 rounded-full bg-background/50 backdrop-blur-xl border border-border shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]" 
-              : "max-w-7xl h-20 px-6 bg-transparent border-b border-transparent"
+              ? "max-w-5xl h-14 md:h-16 px-5 md:px-8 rounded-full bg-background/60 backdrop-blur-xl border border-border shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]" 
+              : "max-w-7xl h-16 md:h-20 px-5 md:px-6 bg-transparent border-b border-transparent"
           }`}
         >
-          {/* Logo: red square + AKASH */}
+          {/* Logo */}
           <button
             onClick={() => handleNavClick("#home", "HOME")}
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-2.5 md:gap-3 cursor-pointer"
           >
-            <span className="w-5 h-5 bg-accent rounded-sm flex-shrink-0" />
+            <span className="w-4 h-4 md:w-5 md:h-5 bg-accent rounded-sm flex-shrink-0" />
             <span
               className="text-foreground font-bold text-sm tracking-[0.12em] uppercase"
               style={{ fontFamily: "var(--font-sans)" }}
@@ -121,42 +130,35 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3">
-            {/* Dark mode toggle */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className="w-8 h-8 rounded-md border border-border flex items-center justify-center text-muted hover:text-foreground hover:border-foreground/30 transition-all"
-              >
-                {resolvedTheme === "dark" ? <Moon size={14} /> : <Sun size={14} />}
-              </button>
-            )}
-
             {/* Mobile hamburger */}
             <button
-              className="md:hidden text-muted hover:text-foreground p-1"
+              className="md:hidden text-muted hover:text-foreground p-2"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — full-screen overlay */}
       {mobileOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed top-14 left-0 right-0 z-40 bg-background border-b border-border md:hidden"
+          className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl md:hidden flex flex-col items-center justify-center"
         >
-          <ul className="flex flex-col py-4 px-6 gap-3">
+          <ul className="flex flex-col items-center gap-6">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               return (
                 <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href, link.label)}
-                    className={`nav-link ${activeSection === id ? "active" : ""}`}
+                    className={`text-lg tracking-[0.15em] uppercase transition-colors ${
+                      activeSection === id ? "text-accent font-bold" : "text-muted hover:text-foreground"
+                    }`}
+                    style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {link.label}
                   </button>

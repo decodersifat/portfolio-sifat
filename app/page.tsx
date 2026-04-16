@@ -14,7 +14,7 @@ import Preloader from "@/components/Preloader";
 
 export default function Home() {
   return (
-    <main className="bg-background cursor-none">
+    <main className="bg-background">
       <Preloader />
       <CustomCursor />
       <ScrollProgress />

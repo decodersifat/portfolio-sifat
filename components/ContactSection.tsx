@@ -97,20 +97,20 @@ export default function ContactSection() {
   }, { scope: container });
 
   return (
-    <section id="contact" className="bg-background py-24 px-6" ref={container}>
+    <section id="contact" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="06" label="Get In Touch" title="Contact" />
 
-        <p className="contact-p text-muted text-sm mb-12" style={{ fontFamily: "var(--font-sans)" }}>
+        <p className="contact-p text-muted text-[13px] md:text-sm mb-8 md:mb-12" style={{ fontFamily: "var(--font-sans)" }}>
           Collaborations, roles, or a technical chat — I&apos;m listening.
         </p>
 
         {/* 3-col top row */}
-        <div className="contact-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+        <div className="contact-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-3 md:mb-4">
           {contactCards.slice(0, 3).map((card, i) => (
             <div key={card.label} className="contact-card">
               <TiltCard
-                className={`p-8 rounded-xl border bg-card flex flex-col items-center gap-4 h-full ${
+                className={`p-6 md:p-8 rounded-xl border bg-card flex flex-col items-center gap-3 md:gap-4 h-full ${
                   i === 0 ? "border-accent/50" : "border-border"
                 }`}
                 intensity={8}
@@ -119,7 +119,7 @@ export default function ContactSection() {
                   href={card.href}
                   target={card.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={card.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                  className="flex flex-col items-center gap-4 w-full"
+                  className="flex flex-col items-center gap-3 md:gap-4 w-full"
                   data-cursor-hover
                 >
                   <div className="contact-icon-wrap w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
@@ -130,7 +130,7 @@ export default function ContactSection() {
                       {card.label}
                     </p>
                     <p
-                      className="hover-text-spacing text-accent text-xs transition-colors"
+                      className="hover-text-spacing text-accent text-[12px] md:text-xs transition-colors break-all md:break-normal"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
                       {card.value}
@@ -144,12 +144,12 @@ export default function ContactSection() {
 
         {/* YouTube card */}
         <div className="yt-card w-full sm:w-64">
-          <TiltCard className="p-8 rounded-xl border border-border bg-card flex flex-col items-center gap-4" intensity={8}>
+          <TiltCard className="p-6 md:p-8 rounded-xl border border-border bg-card flex flex-col items-center gap-3 md:gap-4" intensity={8}>
             <a
               href={contactCards[3].href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-4 w-full"
+              className="flex flex-col items-center gap-3 md:gap-4 w-full"
               data-cursor-hover
             >
               <div className="contact-icon-wrap yt-icon w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
@@ -159,7 +159,7 @@ export default function ContactSection() {
                 <p className="text-foreground font-bold mb-1" style={{ fontFamily: "var(--font-heading)", fontSize: "1rem" }}>
                   {contactCards[3].label}
                 </p>
-                <p className="hover-text-spacing text-accent text-xs" style={{ fontFamily: "var(--font-mono)" }}>
+                <p className="hover-text-spacing text-accent text-[12px] md:text-xs" style={{ fontFamily: "var(--font-mono)" }}>
                   {contactCards[3].value}
                 </p>
               </div>

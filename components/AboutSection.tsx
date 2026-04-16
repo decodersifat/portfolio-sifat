@@ -52,15 +52,15 @@ export function SectionHeader({ num, label, title }: { num: string; label: strin
   }, { scope: ref });
 
   return (
-    <div ref={ref} className="flex items-end gap-6 mb-16 overflow-hidden">
+    <div ref={ref} className="flex items-end gap-4 md:gap-6 mb-10 md:mb-16 overflow-hidden">
       <div className="heading-num">
-        <span className="section-num text-[4rem] text-foreground/10">{num}</span>
+        <span className="section-num text-foreground/10">{num}</span>
       </div>
-      <div className="pb-2">
+      <div className="pb-1 md:pb-2">
         <p className="heading-label section-label mb-1 text-accent">
           {label}
         </p>
-        <h2 className="heading-title section-title text-5xl text-foreground">
+        <h2 className="heading-title section-title text-foreground">
           {title}
         </h2>
       </div>
@@ -94,29 +94,29 @@ export default function AboutSection() {
   }, { scope: container });
 
   return (
-    <section id="about" className="bg-background py-24 px-6 relative z-30" ref={container}>
+    <section id="about" className="bg-background py-16 md:py-24 px-5 md:px-6 relative z-30" ref={container}>
       <div className="max-w-7xl mx-auto">
         <SectionHeader num="01" label="About Me" title="The Dashboard" />
 
         {/* BENTO GRID */}
-        <div className="bento-grid grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] gap-4">
+        <div className="bento-grid grid grid-cols-1 md:grid-cols-4 auto-rows-auto md:auto-rows-[250px] gap-4">
           
           {/* Main Bio Box (Large) */}
           <div className="bento-card md:col-span-3 md:row-span-2">
-            <TiltCard className="h-full w-full p-8 rounded-2xl border border-border bg-card/80 backdrop-blur-md flex flex-col justify-between group">
-              <h3 className="text-muted text-xs tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-mono)" }}>
+            <TiltCard className="h-full w-full p-6 md:p-8 rounded-2xl border border-border bg-card/80 backdrop-blur-md flex flex-col justify-between group">
+              <h3 className="text-muted text-xs tracking-widest uppercase mb-3 md:mb-4" style={{ fontFamily: "var(--font-mono)" }}>
                 // Identity
               </h3>
-              <div className="space-y-6 flex-1 pr-6">
+              <div className="space-y-4 md:space-y-6 flex-1 pr-2 md:pr-6">
                 <TextReveal
                   text="I build intelligent systems and full-stack platforms — bridging AI/ML research with modern web engineering."
-                  className="text-foreground text-2xl md:text-4xl leading-snug font-medium"
+                  className="text-foreground text-xl md:text-2xl lg:text-4xl leading-snug font-medium"
                   style={{ fontFamily: "var(--font-sans)" }}
                 />
                 <TextReveal
                   delay={0.2}
                   text="Strong focus on Python, Django, React, and data-driven solutions. CSE undergrad at Northern University Bangladesh pushing the boundaries of what software can do."
-                  className="text-muted text-base leading-relaxed"
+                  className="text-muted text-sm md:text-base leading-relaxed"
                   style={{ fontFamily: "var(--font-sans)" }}
                 />
               </div>
@@ -126,14 +126,14 @@ export default function AboutSection() {
           {/* Stats Boxes 1 & 2 */}
           {STATS.slice(0, 2).map((stat, i) => (
             <div key={i} className="bento-card md:col-span-1">
-              <TiltCard className="h-full w-full p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center relative overflow-hidden text-center group">
-                <div className="bento-icon w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4 border border-border group-hover:border-accent/50 transition-colors">
+              <TiltCard className="h-full w-full p-5 md:p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center relative overflow-hidden text-center group">
+                <div className="bento-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-background flex items-center justify-center mb-3 md:mb-4 border border-border group-hover:border-accent/50 transition-colors">
                   {stat.icon}
                 </div>
-                <h4 className="text-foreground text-5xl font-bold mb-2 tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
+                <h4 className="text-foreground text-4xl md:text-5xl font-bold mb-2 tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
                   {stat.end}
                 </h4>
-                <p className="text-muted text-[10px] uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                <p className="text-muted text-[11px] uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
                   {stat.label}
                 </p>
               </TiltCard>
@@ -142,16 +142,16 @@ export default function AboutSection() {
 
           {/* Certifications (Scrollable Area) */}
           <div className="bento-card md:col-span-2 md:row-span-1">
-            <TiltCard className="h-full w-full p-8 rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
-              <h3 className="text-muted text-xs tracking-widest uppercase mb-6 flex justify-between items-center" style={{ fontFamily: "var(--font-mono)" }}>
+            <TiltCard className="h-full w-full p-6 md:p-8 rounded-2xl border border-border bg-card overflow-hidden flex flex-col">
+              <h3 className="text-muted text-xs tracking-widest uppercase mb-4 md:mb-6 flex justify-between items-center" style={{ fontFamily: "var(--font-mono)" }}>
                 // Skills
                 <Award size={14} className="text-accent" />
               </h3>
-              <div className="grid grid-cols-2 gap-y-4 gap-x-2">
+              <div className="grid grid-cols-2 gap-y-3 md:gap-y-4 gap-x-2">
                 {SKILLS.map((skill, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <CheckCircle2 size={14} className="text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/70 text-sm leading-tight">{skill}</span>
+                    <span className="text-foreground/70 text-[13px] md:text-sm leading-tight">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -161,14 +161,14 @@ export default function AboutSection() {
           {/* Stats Boxes 3 & 4 */}
           {STATS.slice(2, 4).map((stat, i) => (
             <div key={i+2} className="bento-card md:col-span-1">
-              <TiltCard className="h-full w-full p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center relative overflow-hidden text-center group">
-                <div className="bento-icon w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4 border border-border group-hover:border-accent/50 transition-colors">
+              <TiltCard className="h-full w-full p-5 md:p-6 rounded-2xl border border-border bg-card flex flex-col items-center justify-center relative overflow-hidden text-center group">
+                <div className="bento-icon w-10 h-10 md:w-12 md:h-12 rounded-full bg-background flex items-center justify-center mb-3 md:mb-4 border border-border group-hover:border-accent/50 transition-colors">
                   {stat.icon}
                 </div>
-                <h4 className="text-foreground text-5xl font-bold mb-2 tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
+                <h4 className="text-foreground text-4xl md:text-5xl font-bold mb-2 tracking-tighter" style={{ fontFamily: "var(--font-heading)" }}>
                   {stat.end}
                 </h4>
-                <p className="text-muted text-[10px] uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                <p className="text-muted text-[11px] uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
                   {stat.label}
                 </p>
               </TiltCard>
