@@ -166,7 +166,7 @@ export default function HeroSection() {
       id="home" 
       ref={container}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pt-24 md:pt-20"
+      className="relative min-h-[100dvh] flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10"
     >
       {/* Background Orbs */}
       <div className="hero-bg-orbs absolute inset-0 pointer-events-none">
@@ -192,13 +192,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
       </div>
 
-      <div className="hero-content-wrap relative z-20 max-w-7xl mx-auto w-full flex flex-col items-start">
+      <div className="hero-content-wrap relative z-20 max-w-7xl mx-auto w-full flex flex-col items-start -mt-8 md:mt-0">
         
         {/* Monospaced Intro tag */}
-        <div className="hero-tag mb-6 md:mb-8 inline-flex items-center gap-2 md:gap-3 border border-border rounded-full px-4 md:px-5 py-2 backdrop-blur-sm bg-foreground/5">
+        <div className="hero-tag mb-6 md:mb-8 inline-flex items-center gap-2 md:gap-3 border border-border rounded-full px-4 md:px-5 py-2.5 backdrop-blur-sm bg-foreground/5">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
-          <span className="text-accent text-[11px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em]" style={{ fontFamily: "var(--font-mono)" }}>
-            Full-Stack &amp; AI/ML Engineer · Dhaka, Bangladesh
+          <span className="text-accent text-[11px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] leading-relaxed" style={{ fontFamily: "var(--font-mono)" }}>
+            Full-Stack &amp; AI/ML Engineer
+            <span className="hidden md:inline"> · Dhaka, Bangladesh</span>
+            <span className="block md:hidden">Dhaka, Bangladesh</span>
           </span>
         </div>
 
