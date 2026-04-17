@@ -83,34 +83,52 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "CentWorkers – Job Board Platform",
+    description:
+      "A full-stack MERN job platform where employers can post, update and delete job listings, while workers can browse and accept jobs. Features Google OAuth via Firebase, JWT-secured REST APIs, and a responsive React UI.",
+    stack: ["React", "Express.js", "MongoDB", "Node.js", "Firebase", "JWT"],
+    image: "/projects/centworkers.png",
+    liveLink: "https://cent-workers.netlify.app/",
+    frontendRepo: "https://github.com/decodersifat/Cent-Workers-Frontend",
+    backendRepo: "https://github.com/decodersifat/mycentworkersbackend",
+    deployment: "Frontend: Netlify · Backend: Vercel",
+    featured: true,
+  },
+  {
+    title: "PlayOn – Gaming Discovery Hub",
+    description:
+      "A modern gaming library platform for discovering 30+ games across multiple categories. Users can browse, search, view detailed game info, and access download links. Includes Google OAuth, protected routes, GSAP animations, and a Swiper-powered 3D banner.",
+    stack: ["React", "Express.js", "MongoDB", "Firebase", "GSAP", "Swiper"],
+    image: "/projects/playone.png",
+    liveLink: "https://decoder-sifat-playon.netlify.app/",
+    frontendRepo: "https://github.com/decodersifat/playon-gaming-hub",
+    backendRepo: null,
+    deployment: "Frontend: Netlify",
+    featured: true,
+  },
+  {
+    title: "GarmentFlow – Factory Management System",
+    description:
+      "A comprehensive web platform for small to medium garment factories to manage orders, production stages, inventory, and delivery tracking. Role-based dashboards for Admin, Manager, and Buyer with a mock payment gateway and glassmorphism UI.",
+    stack: ["React", "Express.js", "MongoDB", "Firebase", "Framer Motion", "Tailwind CSS"],
+    image: "/projects/garmentsflow.png",
+    liveLink: "https://garmentflow-ph.netlify.app/",
+    frontendRepo: "https://github.com/decodersifat/GarmentFlow-Frontend",
+    backendRepo: "https://github.com/decodersifat/GarmentFlow-Backend",
+    deployment: "Frontend: Netlify · Backend: Vercel",
+    featured: true,
+  },
+  {
     title: "Hello Doctor – AI-Powered Diagnostic Tool",
     description:
-      "A full-stack AI-driven healthcare diagnostic platform capable of analysing medical data and generating intelligent predictions. Built REST APIs with Express.js and used Django exclusively for serving trained ML models.",
-    stack: ["TensorFlow", "Keras", "Django", "React", "Tailwind", "MongoDB", "Express.js", "Node.js"],
+      "2025 | Developed a full-stack AI-driven healthcare diagnostic platform capable of analyzing medical data and generating intelligent predictions. Built REST APIs with Express.js as the primary backend to handle user interactions, and used Django exclusively for serving trained ML models (TensorFlow & Keras). Integrated React with Tailwind CSS for a modern and user-friendly frontend experience. Implemented JWT-based authentication for secure user login and utilized MongoDB with Mongoose for scalable data storage.",
+    stack: ["TensorFlow", "Keras", "Django (Model API)", "React", "Tailwind", "MongoDB", "Express.js", "Node.js"],
     image: "/projects/hello-doctor.png",
-    link: "https://github.com/decodersifat",
-    linkLabel: "GitHub",
+    liveLink: null,
+    frontendRepo: "https://github.com/decodersifat/Hello-doctor",
+    backendRepo: null,
+    deployment: "In Development",
     featured: true,
-  },
-  {
-    title: "BookiePedia – Digital Book Sharing Platform",
-    description:
-      "A platform where users can upload, view, and manage book listings. Role-based access: anyone can view books, while authenticated users can publish, edit, or update listings. Publisher profiles with dynamically fetched books via Django ORM.",
-    stack: ["Django", "PostgreSQL", "Tailwind CSS"],
-    image: "/projects/bookiepedia.png",
-    link: "https://github.com/decodersifat",
-    linkLabel: "GitHub",
-    featured: true,
-  },
-  {
-    title: "KNN Model – Breast Cancer Prediction",
-    description:
-      "A K-Nearest Neighbours classifier predicting breast cancer malignancy (benign vs malignant) with 99.12% test accuracy. Includes preprocessing, scaling, K-value optimisation, and accuracy visualisations.",
-    stack: ["Python", "scikit-learn", "pandas", "Matplotlib"],
-    image: "/projects/knn-model.png",
-    link: "https://github.com/decodersifat",
-    linkLabel: "GitHub",
-    featured: false,
   },
 ];
 
@@ -164,13 +182,7 @@ export const openSourceProjects = [
     name: "hello-doctor",
     description: "AI-powered healthcare diagnostic platform with TensorFlow/Keras models served via Django REST API",
     lang: "Python",
-    link: "https://github.com/decodersifat",
-  },
-  {
-    name: "bookiepedia",
-    description: "Digital book sharing platform with role-based access control built in Django + PostgreSQL",
-    lang: "Python",
-    link: "https://github.com/decodersifat",
+    link: "https://github.com/decodersifat/Hello-doctor",
   },
   {
     name: "knn-cancer-predict",
@@ -179,10 +191,16 @@ export const openSourceProjects = [
     link: "https://github.com/decodersifat",
   },
   {
-    name: "portfolio",
-    description: "Personal developer portfolio built with Next.js, Tailwind CSS, TypeScript, and GSAP animations",
+    name: "playon-gaming-hub",
+    description: "A modern gaming library platform with GSAP animations and 3D Swiper banner",
     lang: "JavaScript",
-    link: "https://github.com/decodersifat",
+    link: "https://github.com/decodersifat/playon-gaming-hub",
+  },
+  {
+    name: "Cent-Workers-Frontend",
+    description: "Frontend for a comprehensive MERN job board platform with Google OAuth via Firebase",
+    lang: "JavaScript",
+    link: "https://github.com/decodersifat/Cent-Workers-Frontend",
   },
 ];
 

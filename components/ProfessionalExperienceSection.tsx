@@ -4,7 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { professionalExperiences } from "@/lib/data";
 import { SectionHeader } from "./AboutSection";
 import TiltCard from "./TiltCard";
 
@@ -31,7 +30,7 @@ function AnimatedLine() {
   );
 }
 
-export default function ProfessionalExperienceSection() {
+export default function ProfessionalExperienceSection({ professionalExperiences }: { professionalExperiences: any[] }) {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -126,7 +125,7 @@ export default function ProfessionalExperienceSection() {
                   </p>
 
                   <ul className="space-y-2">
-                    {exp.bullets.map((b, j) => (
+                    {exp.bullets?.map((b: string, j: number) => (
                       <li
                         key={j}
                         className="exp-bullet flex items-start gap-2.5 text-foreground/80 text-[13px] md:text-sm leading-relaxed"

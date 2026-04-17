@@ -4,7 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { articles } from "@/lib/data";
 import { ArrowRight, GitBranch, BarChart2, Activity, GitMerge, Link, Users } from "lucide-react";
 import { SectionHeader } from "./AboutSection";
 import TiltCard from "./TiltCard";
@@ -22,7 +21,7 @@ const articleIcons = [
   <Users size={18} className="text-accent" key="5" />,
 ];
 
-export default function ArticlesSection() {
+export default function ArticlesSection({ articles }: { articles: any[] }) {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -52,7 +51,7 @@ export default function ArticlesSection() {
   return (
     <section id="articles" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
-        <SectionHeader num="04" label="Knowledge Sharing" title="Articles" />
+        <SectionHeader num="05" label="Knowledge Sharing" title="Articles" />
 
         <p
           className="articles-p text-muted text-[13px] md:text-sm mb-8 md:mb-12 ml-0"
@@ -72,7 +71,7 @@ export default function ArticlesSection() {
 
         {/* 3-col grid */}
         <div className="articles-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          {articles.map((article, i) => (
+          {articles?.map((article: any, i: number) => (
             <div key={i} className="article-card">
               <TiltCard className="p-5 md:p-6 rounded-xl border border-border bg-card flex flex-col h-full" intensity={9}>
                 <div className="article-icon-wrap w-9 h-9 rounded-lg bg-accent/15 flex items-center justify-center mb-4 md:mb-5 flex-shrink-0 transition-colors">

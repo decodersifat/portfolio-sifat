@@ -99,7 +99,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
-        <SectionHeader num="06" label="Get In Touch" title="Contact" />
+        <SectionHeader num="07" label="Get In Touch" title="Contact" />
 
         <p className="contact-p text-muted text-[13px] md:text-sm mb-8 md:mb-12" style={{ fontFamily: "var(--font-sans)" }}>
           Collaborations, roles, or a technical chat — I&apos;m listening.

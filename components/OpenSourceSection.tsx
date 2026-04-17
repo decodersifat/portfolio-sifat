@@ -4,7 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { openSourceProjects } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "./AboutSection";
 import TiltCard from "./TiltCard";
@@ -28,7 +27,7 @@ function GithubIcon() {
   );
 }
 
-export default function OpenSourceSection() {
+export default function OpenSourceSection({ openSourceProjects }: { openSourceProjects: any[] }) {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -57,7 +56,7 @@ export default function OpenSourceSection() {
   return (
     <section id="opensource" className="bg-background py-16 md:py-24 px-5 md:px-6" ref={container}>
       <div className="max-w-7xl mx-auto">
-        <SectionHeader num="05" label="Community" title="Open Source" />
+        <SectionHeader num="06" label="Community" title="Open Source" />
 
         <p
           className="os-p text-muted text-[13px] md:text-sm mb-8 md:mb-12 max-w-lg"
@@ -68,7 +67,7 @@ export default function OpenSourceSection() {
 
         {/* 4-col grid */}
         <div className="os-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
-          {openSourceProjects.map((repo, i) => (
+          {openSourceProjects?.map((repo: any, i: number) => (
             <div key={repo.name} className="os-card">
               <TiltCard className="p-4 md:p-5 rounded-xl border border-border bg-card flex flex-col h-full" intensity={10}>
                 <a
