@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client'
 import { projects, professionalExperiences, experiences, articles, openSourceProjects } from '../lib/data'
 
 // Replace this with your actual token
-const SANITY_WRITE_TOKEN = process.env.SANITY_WRITE_TOKEN || "sklsCctF4HcyD74M23lpFmiUrgJgIT3KHq23YursZS1sTYp1CsuhILFCKLDxzP4uR4II67yvttn61bngjvk3Yo6RFg5GGLTTT5FoW4p70dnE1ApAZB4bfS2BCMX2vCvHLFl4m3iLVJtX1714fZK25GwPQGCxFsV3aFn583nwJlIQ3Ex6xq7p"
+const SANITY_WRITE_TOKEN = process.env.SANITY_WRITE_TOKEN || "REMOVED_FOR_SECURITY"
 
 const client = createClient({
   projectId: '407j3bu7',
