@@ -116,7 +116,7 @@ export default function HeroSection() {
     <section 
       id="home" 
       ref={container}
-      className="relative min-h-[85dvh] lg:min-h-[100dvh] flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pb-10 md:pb-0 md:pt-16 lg:pt-20"
+      className="relative min-h-[85dvh] lg:min-h-[100dvh] flex flex-col justify-center bg-background overflow-hidden px-5 md:px-6 lg:px-10 pb-10 md:pb-0 md:pt-16 lg:pt-20 mt-20"
     >
       {/* Background Orbs */}
       <div className="hero-bg-orbs absolute inset-0 pointer-events-none">
@@ -132,7 +132,7 @@ export default function HeroSection() {
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
           <span className="text-accent text-[11px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] leading-relaxed" style={{ fontFamily: "var(--font-mono)" }}>
             Full-Stack Developer
-            <span className="block md:hidden">Dhaka, Bangladesh</span>
+           
           </span>
         </div>
 
