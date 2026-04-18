@@ -131,8 +131,7 @@ export default function HeroSection() {
         <div className="hero-tag mb-6 md:mb-8 inline-flex items-center gap-2 md:gap-3 border border-border rounded-full px-4 md:px-5 py-2.5 backdrop-blur-sm bg-foreground/5">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0" />
           <span className="text-accent text-[11px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] leading-relaxed" style={{ fontFamily: "var(--font-mono)" }}>
-            Full-Stack &amp; AI/ML Engineer
-            <span className="hidden md:inline"> · Dhaka, Bangladesh</span>
+            Full-Stack Developer
             <span className="block md:hidden">Dhaka, Bangladesh</span>
           </span>
         </div>
